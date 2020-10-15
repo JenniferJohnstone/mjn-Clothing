@@ -2,14 +2,14 @@
     "users": [
         {
             "id": "Bobalooba",
-            "password": "bob",
+            "password": "$2b$10$/O4S0X/5451V/0sL2ftkguoIuljMD4qce.KjX7Vy8OEQ.ViMBGP/m",
             "firstname": "Bob",
             "lastname": "Bobalooba",
             "email": "bob@gmail.com"
         },
         {
             "id": "Contrary",
-            "password": "mary",
+            "password": "$2b$10$zY5khj9ZkE6f.Y5PToXnVO/jxqOGjXa0GMen08569mV5DFVBYWOvS",
             "firstname": "Mary",
             "lastname": "Contrary",
             "email": "mary@gmail.com"
