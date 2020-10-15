@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": "Bobalooba",
+            "password": "bob",
+            "firstname": "Bob",
+            "lastname": "Bobalooba",
+            "email": "bob@gmail.com"
+        },
+        {
+            "id": "Contrary",
+            "password": "mary",
+            "firstname": "Mary",
+            "lastname": "Contrary",
+            "email": "mary@gmail.com"
+        }
+    ]
+}
