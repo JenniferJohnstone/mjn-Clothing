@@ -21,8 +21,7 @@
     "build": "react-scripts build",
     "test": "cross-env NODE_ENV=test jest --verbose --coverage --testPathPattern server",
     "eject": "react-scripts eject",
-    "server": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "server": "cross-env NODE_ENV=development nodemon server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
