@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const apiRouter = express.Router()
-const rawData = fs.readFileSync('server/sampledata.json')
+const rawData = fs.readFileSync('server/sample.json')
 const data = JSON.parse(rawData)
 
 const SECRET = 'secret'
