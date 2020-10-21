@@ -4,7 +4,7 @@
 
 const supertest = require('supertest')
 const fs = require('fs')
-const app = require('./api.js')
+const app = require('../app')
 
 const api = supertest(app)
 
