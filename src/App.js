@@ -1,7 +1,15 @@
 import React from 'react';
+import RegistrationForm from './views/registrationForm'
+
 
 function App() {
-  return null
+
+
+  return (
+    <>
+    <RegistrationForm />
+    </>
+  )
 }
 
 export default App;
