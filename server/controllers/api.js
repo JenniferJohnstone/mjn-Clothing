@@ -9,10 +9,19 @@ const data = JSON.parse(rawData)
 
 const SECRET = 'secret'
 
+//had to do a little adjusting while debugging something, soz
 const getUser = (id) => {
-    return data.users.filter(u => u.id === id)[0]
+    var user = null
+    data.users.filter(u => {
+        if (u.id == id) {
+            user = u
+        }
+    })
+    
+    return user
 }
 
+//registration
 apiRouter.post('/api/users', (req, res) => {
     
     const body = req.body
@@ -44,16 +53,19 @@ apiRouter.post('/api/users', (req, res) => {
         }
     
         data.users.push(newUser)
+        console.log(newUser.password)
         return res.json('Complete the registration! Please log in to start shopping.')
     })
 })
 
+//login
 apiRouter.post('/api/login', async (req, res) => {
     const {id, password} = req.body
 
     const user = getUser(id)
     
     if (!user) {
+        console.log('user not found')
         return res.status(401).json({error: 'invalid id or password'})
     }
 
