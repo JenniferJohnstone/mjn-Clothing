@@ -13,7 +13,7 @@ const getUser = (id) => {
     return data.users.filter(u => u.id === id)[0]
 }
 
-apiRouter.post('/api/users', (req, res) => {
+apiRouter.post('/api/user', (req, res) => {
     
     const body = req.body
 
