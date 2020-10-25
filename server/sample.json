@@ -21,5 +21,21 @@
             "lastname": "123",
             "email": "123"
         }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Cute skirts",
+            "category": "skirts",
+            "price": 20,
+            "quantity": 2
+        },
+        {
+            "id": 2,
+            "name": "Cute shirts",
+            "category": "shirts",
+            "price": 15,
+            "quantity": 4
+        }
     ]
 }
