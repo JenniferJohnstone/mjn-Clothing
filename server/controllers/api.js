@@ -86,8 +86,29 @@ apiRouter.post('/api/login', async (req, res) => {
 })
 
 //get items from ebay 
-apiRouter.get('/api/shop', (req,res) => {
-    const url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=15724&RESPONSE-DATA-FORMAT=JSON'
+apiRouter.post('/api/shop', (req,res) => {
+    console.log('here is the requiest',req.body)
+    var url = null
+    if(req.body.category == 'general') {
+     url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=15724&RESPONSE-DATA-FORMAT=JSON' 
+    }
+
+    if(req.body.category == 'shoes') {
+        url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=3034&RESPONSE-DATA-FORMAT=JSON' 
+       }
+
+    if(req.body.category == 'dresses') {
+    url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=63861&RESPONSE-DATA-FORMAT=JSON' 
+    }
+
+    if(req.body.category == 'skirts') {
+        url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=63864&RESPONSE-DATA-FORMAT=JSON' 
+        }
+
+    if(req.body.category == 'pants') {
+        url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=63863&RESPONSE-DATA-FORMAT=JSON' 
+        }
+
     axios.get(url)
         .then(response => {
             return res.json(response.data)

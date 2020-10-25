@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import RegistrationForm from './views/registrationForm'
 import {
   BrowserRouter as Router, 
-  Switch, Route, Link
+  Switch, Route, Link, Redirect
 } from "react-router-dom"
 import LoginForm from './views/loginForm'
-import MainStoreView from './views/mainStoreView'
+import StoreView from './views/StoreView'
+import ItemMenu from './views/ItemMenu'
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <Router>
 
       <div>
-        <Link to="/">Home </Link>
+        <Link to="/home">Home </Link>
         <Link to="registration">Register </Link>
       </div>
 
@@ -31,6 +32,9 @@ function App() {
             :<> 
             <h4>Please login or register to get started.</h4>
             <LoginForm setUser = {setUser} /> 
+
+            <Redirect to = "/home" />
+
             </>
         }
         </Route>
@@ -43,11 +47,49 @@ function App() {
       </Switch>
 
       <Switch>
-        <Route path ='/'>
-          <MainStoreView />
+        <Route path ='/home'>
+       
+          <ItemMenu />
+
+          <StoreView category = {'general'}/>
         </Route>
       </Switch>
 
+      <Switch>
+        <Route path ='/shoes'>
+       
+          <ItemMenu />
+
+          <StoreView category = {'shoes'}/>
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path ='/dresses'>
+       
+          <ItemMenu />
+
+          <StoreView category = {'dresses'}/>
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path ='/skirts'>
+       
+          <ItemMenu />
+
+          <StoreView category = {'skirts'}/>
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path ='/pants'>
+       
+          <ItemMenu />
+
+          <StoreView category = {'pants'}/>
+        </Route>
+      </Switch>
 
     </Router>
 

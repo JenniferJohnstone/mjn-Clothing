@@ -1,14 +1,14 @@
 import React,{useState} from 'react'
-import getGeneralItems from '../model/getItems'
+import getItems from '../model/getItems'
 
 
-const MainStoreView = () => {
+const StoreView = (category) => {
 
     const [items, setItems] = useState(null)
 
     const RenderItems = ({items}) => {
         if (items == null) {
-            getGeneralItems(setItems)
+            getItems(setItems, category)
             return ( 
             <>
             <p> Loading store...</p>
@@ -17,11 +17,11 @@ const MainStoreView = () => {
             return (
            <>
            {items.map(item => {
-               console.log(item.galleryURL[0])
                return(
                 <>
                <p>{item.title[0]}</p>
                <img src = {item.galleryURL[0]} />
+               <b>${item.sellingStatus[0].convertedCurrentPrice[0].__value__}</b>
                </>
                )
            })}
@@ -39,4 +39,4 @@ const MainStoreView = () => {
 
 }
 
-export default MainStoreView
+export default StoreView
