@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "id": "Bobalooba",
+    "password": "jimbulator",
+    "firstname": "Bean",
+    "lastname": "Jimbulator",
+    "email": "jimbulator@gmail.com"
+}

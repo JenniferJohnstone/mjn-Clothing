@@ -13,6 +13,13 @@
             "firstname": "Mary",
             "lastname": "Contrary",
             "email": "mary@gmail.com"
+        },
+        {
+            "id": "123",
+            "password": "$2b$10$YVefJGIBOx43nJmfd3TdCOj7v5Ts5f/RjhC.eItSEKWifoqzCgjcK",
+            "firstname": "123",
+            "lastname": "123",
+            "email": "123"
         }
     ]
 }
