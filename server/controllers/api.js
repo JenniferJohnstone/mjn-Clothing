@@ -22,7 +22,9 @@ apiRouter.post('/api/user', (req, res) => {
     }
 
     const idCheck = data.users.find(user => user.id === body.id)
+    console.log("id is", idCheck)
     const emailCheck = data.users.find(user => user.email === body.email)
+    console.log("email is", emailCheck)
 
     if (idCheck) {
         return res.status(401).json({error: 'Id is already exist'})
