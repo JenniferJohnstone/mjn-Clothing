@@ -5,21 +5,24 @@
             "password": "$2b$10$MVzgvbz1V039aF6nj2TYAeBOJvB3vSjaclQdtsZfA7MUGFHdrhGmu",
             "firstname": "Bob",
             "lastname": "Bobalooba",
-            "email": "bob@gmail.com"
+            "email": "bob@gmail.com",
+            "cart": []
         },
         {
             "id": "Contrary",
             "password": "$2b$10$e/A.8JGJAdDsavrJihRohuY7/UT9.5Dz7FnYxkDu6Ch.zGZ5XBIM2",
             "firstname": "Mary",
             "lastname": "Contrary",
-            "email": "mary@gmail.com"
+            "email": "mary@gmail.com",
+            "cart": []
         },
         {
             "id": "123",
             "password": "$2b$10$YVefJGIBOx43nJmfd3TdCOj7v5Ts5f/RjhC.eItSEKWifoqzCgjcK",
             "firstname": "123",
             "lastname": "123",
-            "email": "123"
+            "email": "123",
+            "cart": []
         }
     ],
     "products": [

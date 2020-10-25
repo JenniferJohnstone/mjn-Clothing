@@ -53,7 +53,8 @@ apiRouter.post('/api/users', (req, res) => {
             password: result,
             firstname: body.firstname,
             lastname: body.lastname,
-            email: body.email
+            email: body.email,
+            cart: []
         }
     
         data.users.push(newUser)
