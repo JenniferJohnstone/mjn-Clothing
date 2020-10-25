@@ -1,0 +1,68 @@
+{
+    "users": [
+        {
+            "id": "Bobalooba",
+            "password": "$2b$10$dfMHkss7FP3UxnnBqxAw/uPlggUQu6ugoiBUsh0x6P.zQLesWVAgK",
+            "firstname": "Bob",
+            "lastname": "Bobalooba",
+            "email": "bob@gmail.com"
+        },
+        {
+            "id": "Contrary",
+            "password": "$2b$10$y4rmeVCLkSdDrfQo/.Oe7uVN7y0ojNufukXHMnbAixdORCU5Bzs66",
+            "firstname": "Mary",
+            "lastname": "Contrary",
+            "email": "mary@gmail.com"
+        },
+
+    {
+
+        "id": "Coles",
+        "password": "$2b$10$xeHc6v7tJILXUygfSNCkVet5HiWufWjnRDHLH0klXhxugEJeJ2sgq",
+        "firstname": "Michele",
+        "lastname": "Coles",
+        "email": "Michele@gmail.com"
+    },
+    {
+        "id": "Lee",
+        "password": "$2b$10$qFyGd3ZhScQB0lPT8ekW7ehb/q4kqFHjGf0xEVXrZA9RVrGmmx9MS",
+        "firstname": "Kylie",
+        "lastname": "Lee",
+        "email": "William.Lee@gmail.com"
+    },
+    {
+        "id": "Muller",
+        "password": "$2b$10$htGz8.QdeKQX2a6XZP0u..3NqZ0O7DZTx808bzxCA6AGl8xX19HXm",
+        "firstname": "Ana",
+        "lastname": "Muller",
+        "email": "Muller.ana@gmail.com"
+    },
+    {
+        "id": "Hill",
+        "password": "$2b$10$5CaFcU/YT6RlP6slZNmqfOrsIMjKaFeON/EwRsZOsWO5kVQArjg0u",
+        "firstname": "Julian",
+        "lastname": "Hill",
+        "email": "Julian.hill@gmail.com"
+    },
+    {
+        "id": "Wilson",
+        "password": "$2b$10$6PvequJX1k/HT9P6AWbKv.idAAl19D/Rfjrkoew1W6kg2U.FNKuoe",
+        "firstname": "Mat",
+        "lastname": "Wilson",
+        "email": "Wilson@gmail.com"
+    },
+    {
+        "id": "Foster",
+        "password": "$2b$10$cvN2UfWPhgKxFmYqu2ZXcOxFQUdl3S.tQSYOTXg3SI2xKOfITRiP2",
+        "firstname": "Sarah",
+        "lastname": "Sarah",
+        "email": "Sarah.foster@gmail.com"
+    }, {
+        "id": "Wang",
+        "password": " $2b$10$GDmpd26LapgTmFJhI7fOneNGjNEVI0mKsZUeSFnX.5/NB0rM/cP.6",
+        "firstname": "Siva",
+        "lastname": "Wang",
+        "email": "Siva.Wang@gmail.com"
+    }
+    ]
+}
