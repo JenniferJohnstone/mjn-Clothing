@@ -44,7 +44,7 @@ apiRouter.post('/api/user', (req, res) => {
         }
     
         data.users.push(newUser)
-        return res.json('Complete the registration! Please log in to start shopping.')
+        return res.status(200).json('Complete the registration! Please log in to start shopping.')
     })
 })
 
