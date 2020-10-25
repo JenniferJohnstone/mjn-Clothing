@@ -2,14 +2,14 @@
     "users": [
         {
             "id": "Bobalooba",
-            "password": "$2b$10$dfMHkss7FP3UxnnBqxAw/uPlggUQu6ugoiBUsh0x6P.zQLesWVAgK",
+            "password": "$2b$10$2pG2P2S4bqhUMItrUnG5uuXZ2nQJCMTBcq3AdEmEBBJ.4O20XDXBu",
             "firstname": "Bob",
             "lastname": "Bobalooba",
             "email": "bob@gmail.com"
         },
         {
             "id": "Contrary",
-            "password": "$2b$10$y4rmeVCLkSdDrfQo/.Oe7uVN7y0ojNufukXHMnbAixdORCU5Bzs66",
+            "password": "$2b$10$690LaBSC3l7ZzgRpXqQcXe2tfDtPXOoKsXwXbhUt7IqO9zOnerjj.",
             "firstname": "Mary",
             "lastname": "Contrary",
             "email": "mary@gmail.com"
@@ -18,51 +18,72 @@
     {
 
         "id": "Coles",
-        "password": "$2b$10$xeHc6v7tJILXUygfSNCkVet5HiWufWjnRDHLH0klXhxugEJeJ2sgq",
+        "password": "$2b$10$XcqIAJAvdCTpKnXxjIA3f.6K9ysxq7MYaBfgMbVe/0ZMB/9B7w1La",
         "firstname": "Michele",
         "lastname": "Coles",
         "email": "Michele@gmail.com"
     },
     {
         "id": "Lee",
-        "password": "$2b$10$qFyGd3ZhScQB0lPT8ekW7ehb/q4kqFHjGf0xEVXrZA9RVrGmmx9MS",
+        "password": "$2b$10$JQ4aKJl.Rd9FiE9trwnIP.8tJ/jEy8BS2lrw6shycWlGCCR9kWDSe",
         "firstname": "Kylie",
         "lastname": "Lee",
         "email": "William.Lee@gmail.com"
     },
     {
         "id": "Muller",
-        "password": "$2b$10$htGz8.QdeKQX2a6XZP0u..3NqZ0O7DZTx808bzxCA6AGl8xX19HXm",
+        "password": " $2b$10$z5FSHEqCPz0vtPsm5lHpj.xOCFkb7uD2sRedxSa0gGmzX3PdMr5Py",
         "firstname": "Ana",
         "lastname": "Muller",
         "email": "Muller.ana@gmail.com"
     },
     {
         "id": "Hill",
-        "password": "$2b$10$5CaFcU/YT6RlP6slZNmqfOrsIMjKaFeON/EwRsZOsWO5kVQArjg0u",
+        "password": "$2b$10$5ivKRQr3stnTV1Dz8AQiWOMaIOGBPo5feDBlcsaqC7E.NjSGvAqTK",
         "firstname": "Julian",
         "lastname": "Hill",
         "email": "Julian.hill@gmail.com"
     },
     {
         "id": "Wilson",
-        "password": "$2b$10$6PvequJX1k/HT9P6AWbKv.idAAl19D/Rfjrkoew1W6kg2U.FNKuoe",
+        "password": "$2b$10$mYkVjEtByBj2RdyvBvGNwumAq719XanWxsWWZvvmX.1nGuwuOW2oC",
         "firstname": "Mat",
         "lastname": "Wilson",
         "email": "Wilson@gmail.com"
     },
     {
         "id": "Foster",
-        "password": "$2b$10$cvN2UfWPhgKxFmYqu2ZXcOxFQUdl3S.tQSYOTXg3SI2xKOfITRiP2",
+        "password": "$2b$10$AKxRPbAHPsZ9YJMhJUvST.gziJPX3OQRPll9blu9QxOAvLMjobJGW",
         "firstname": "Sarah",
         "lastname": "Sarah",
         "email": "Sarah.foster@gmail.com"
     }, {
         "id": "Wang",
-        "password": " $2b$10$GDmpd26LapgTmFJhI7fOneNGjNEVI0mKsZUeSFnX.5/NB0rM/cP.6",
+        "password": "$2b$10$EmEiLIP1ps9eMPzpV.sZ5e5BQY/vuLsNx9WfOPVux6lbDEgPpzq8G",
         "firstname": "Siva",
         "lastname": "Wang",
         "email": "Siva.Wang@gmail.com"
+    }
+    , {
+        "id": "Sky",
+        "password": " $2b$10$sWsPXC8hmbtrpwpfI.a.HeSaDxkbnkFZ2Pt/SYJBlXQ.G0lJqB11.",
+        "firstname": "Lily",
+        "lastname": "Sky",
+        "email": "Lily.Sky@gmail.com"
+    }
+    , {
+        "id": "Niki",
+        "password": "$2b$10$owv8w9y9uIJgC/ODtw2RqOr6apqvg.4Bw0zrynVuG/4RFLtMBZyt2",
+        "firstname": "Abby",
+        "lastname": "Niki",
+        "email": "Niki@gmail.com"
+    }
+    , {
+        "id": "Thomas",
+        "password": "$2b$10$Jq/xoGSMjRNLzsGuhzyfMe2xecDKngnmopGOxdevUBGuQIRUTtsK.",
+        "firstname": "Linda",
+        "lastname": "Thomas",
+        "email": "Linda@gmail.com"
     }
     ]
 }
