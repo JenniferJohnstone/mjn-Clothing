@@ -85,5 +85,85 @@
         "lastname": "Thomas",
         "email": "Linda@gmail.com"
     }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Midi skirt",
+            "category": "skirts",
+            "color": "black",
+            "price": 35,
+            "quantity": 2
+        },
+        {
+            "id": 2,
+            "name": "White shirt",
+            "category": "shirts",
+            "color": "white",
+            "price": 55,
+            "quantity": 4
+        }, {
+            "id": 3,
+            "name": "Denim shorts",
+            "category": "shorts",
+            "color": "navy blue",
+            "price": 28,
+            "quantity": 12
+        },{
+            "id": 4,
+            "name": "Cycling shorts",
+            "category": "shorts",
+            "color": "blue",
+            "price": 15,
+            "quantity": 22
+        },
+        {
+            "id": 5,
+            "name": "Khaki Tiered dress",
+            "category": "dresses",
+            "color": "khaki",
+            "price": 48,
+            "quantity": 40
+        },
+        {
+            "id": 6,
+            "name": "Pink prom dress",
+            "category": "dresses",
+            "color": "pink",
+            "price": 100,
+            "quantity": 38
+        },
+        {
+            "id": 7,
+            "name": "Black T-shirt",
+            "category": "shirts",
+            "color": "black",
+            "price": 12,
+            "quantity": 80
+        },
+        {
+            "id": 8,
+            "name": "Blue crop top",
+            "category": "tops",
+            "color": "blue",
+            "price": 17,
+            "quantity": 60
+        },
+        {
+            "id": 9,
+            "name": "Orange crop top",
+            "category": "tops",
+            "color": "Orange",
+            "price": 17,
+            "quantity": 30
+        },
+        {
+            "id": 10,
+            "name": "Mini skirts",
+            "category": "skirts",
+            "color": "red",
+            "price": 27,
+            "quantity": 35
+        }
     ]
 }
