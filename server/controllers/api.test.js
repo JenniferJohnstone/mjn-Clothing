@@ -66,7 +66,7 @@ describe('api', () => {
             email: 'bob@gmail.com'
         }
 
-        await api.post('/api/user')
+        await api.post('/api/users')
                  .send(data)
                  .expect(401)
     })
@@ -81,7 +81,7 @@ describe('api', () => {
             email: 'jimbulator@gmail.com'
         }
 
-        await api.post('/api/user')
+        await api.post('/api/users')
                  .send(data)
                  .expect(200)
     })
@@ -96,7 +96,7 @@ describe('api', () => {
             email: 'jimbulator@gmail.com'
         }
 
-        await api.post('/api/user')
+        await api.post('/api/users')
                  .send(data)
                  .expect(401)
     })
@@ -111,7 +111,7 @@ describe('api', () => {
             email: 'jimbulator@gmail.com'
         }
 
-        await api.post('/api/user')
+        await api.post('/api/users')
                  .send(data)
                  .expect(401)
     })

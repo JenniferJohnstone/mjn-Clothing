@@ -9,11 +9,20 @@ const data = JSON.parse(rawData)
 
 const SECRET = 'secret'
 
+//had to do a little adjusting while debugging something, soz
 const getUser = (id) => {
-    return data.users.filter(u => u.id === id)[0]
+    var user = null
+    data.users.filter(u => {
+        if (u.id == id) {
+            user = u
+        }
+    })
+    
+    return user
 }
 
-apiRouter.post('/api/user', (req, res) => {
+//registration
+apiRouter.post('/api/users', (req, res) => {
     
     const body = req.body
 
@@ -22,9 +31,7 @@ apiRouter.post('/api/user', (req, res) => {
     }
 
     const idCheck = data.users.find(user => user.id === body.id)
-    console.log("id is", idCheck)
     const emailCheck = data.users.find(user => user.email === body.email)
-    console.log("email is", emailCheck)
 
     if (idCheck) {
         return res.status(401).json({error: 'Id is already exist'})
@@ -50,12 +57,14 @@ apiRouter.post('/api/user', (req, res) => {
     })
 })
 
+//login
 apiRouter.post('/api/login', async (req, res) => {
     const {id, password} = req.body
 
     const user = getUser(id)
     
     if (!user) {
+        console.log('user not found')
         return res.status(401).json({error: 'invalid id or password'})
     }
 
