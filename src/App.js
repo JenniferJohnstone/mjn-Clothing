@@ -5,11 +5,13 @@ import {
   Switch, Route, Link
 } from "react-router-dom"
 import LoginForm from './views/loginForm'
+import List from './views/ProductList'
 
 
 function App() {
 
   const [user, setUser] = useState(null)
+  const[products]= useState([])
 
 
 
@@ -46,6 +48,11 @@ function App() {
           <h1>Welcome to the store</h1>
         </Route>
       </Switch>
+
+      <div>
+        <p> New products</p>
+        <List product={products}/>
+      </div>
 
 
     </Router>
