@@ -7,9 +7,11 @@ const apiRouter = express.Router()
 const rawData = fs.readFileSync('server/sample.json')
 const data = JSON.parse(rawData)
 
+const axios = require('axios')
+
 const SECRET = 'secret'
 
-//had to do a little adjusting while debugging something, soz
+//had to do a little adjusting while debugging something
 const getUser = (id) => {
     var user = null
     data.users.filter(u => {
@@ -81,6 +83,17 @@ apiRouter.post('/api/login', async (req, res) => {
     } else {
         return res.status(401).json({error: 'invalid id or password'})
     }
+})
+
+//get items from ebay 
+apiRouter.get('/api/shop', (req,res) => {
+    const url = 'https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=Jennifer-Shopping-PRD-2e65479d5-4f69c2e4&GLOBAL-ID=EBAY-AU&categoryId=15724&RESPONSE-DATA-FORMAT=JSON'
+    axios.get(url)
+        .then(response => {
+            return res.json(response.data)
+        })
+        .catch(error => {
+            return res.status('the request has failed')})
 })
 
 module.exports = apiRouter

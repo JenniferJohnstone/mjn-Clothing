@@ -5,6 +5,7 @@ import {
   Switch, Route, Link
 } from "react-router-dom"
 import LoginForm from './views/loginForm'
+import MainStoreView from './views/mainStoreView'
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
     <Router>
 
       <div>
-        <Link to="/home">Home </Link>
-        <Link to="/registration">Register </Link>
+        <Link to="/">Home </Link>
+        <Link to="registration">Register </Link>
       </div>
 
       <Switch>
@@ -42,8 +43,8 @@ function App() {
       </Switch>
 
       <Switch>
-        <Route path ='/home'>
-          <h1>Welcome to the store</h1>
+        <Route path ='/'>
+          <MainStoreView />
         </Route>
       </Switch>
 
