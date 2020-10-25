@@ -81,7 +81,7 @@ apiRouter.post('/api/login', async (req, res) => {
         }
         const token = jwt.sign(userToken, SECRET)
 
-        return res.status(200).json({token, id: user.id, firstname: user.firstname})
+        return res.status(200).json({token, id: user.id, firstname: user.firstname, cart: user.cart})
     } else {
         return res.status(401).json({error: 'invalid id or password'})
     }
