@@ -21,6 +21,10 @@ const getUser = (id) => {
     return user
 }
 
+apiRouter.get('/api/products', (req,res) => {
+    return res.json(data.products)
+})
+
 //registration
 apiRouter.post('/api/users', (req, res) => {
     

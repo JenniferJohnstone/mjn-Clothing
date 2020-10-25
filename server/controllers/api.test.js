@@ -20,6 +20,17 @@ describe('api', () => {
         sampleData('server/sample.json')
     })
 
+    test('get products request returns JSON', async () => {
+        await api.get('/api/products')
+                 .expect(200)
+                 .expect('Content-Type', /application\/json/)
+    })
+
+    test('there are two products records', async () => {
+        const response = await api.get('/api/products')
+        expect(response.body).toHaveLength(2)
+    })
+
     test('login works with correct username/password', async () => {
 
         const data = {
