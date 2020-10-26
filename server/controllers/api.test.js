@@ -17,7 +17,7 @@ const sampleData = (fileName) => {
 describe('api', () => {
 
     beforeEach(async () => {
-        sampleData('server/sample.json')
+        sampleData('server/sampledata.json')
     })
 
     test('get products request returns JSON', async () => {
@@ -26,9 +26,9 @@ describe('api', () => {
                  .expect('Content-Type', /application\/json/)
     })
 
-    test('there are two products records', async () => {
+    test('there are ten products records', async () => {
         const response = await api.get('/api/products')
-        expect(response.body).toHaveLength(2)
+        expect(response.body).toHaveLength(10)
     })
 
     test('login works with correct username/password', async () => {
