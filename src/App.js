@@ -7,13 +7,13 @@ import {
 import LoginForm from './views/loginForm'
 import StoreView from './views/StoreView'
 import ItemMenu from './views/ItemMenu'
+import ItemView from './views/itemView'
+
 
 
 function App() {
 
   const [user, setUser] = useState(null)
-
-
 
   return (
     <>
@@ -22,7 +22,7 @@ function App() {
 
       <div>
         <Link to="/home">Home </Link>
-        <Link to="registration">Register </Link>
+        <Link to="/registration">Register </Link>
       </div>
 
       <Switch>
@@ -90,6 +90,13 @@ function App() {
           <StoreView category = {'pants'}/>
         </Route>
       </Switch>
+
+
+        <Switch>
+              <Route path= '/store/:category/:id'>
+                <ItemView />
+              </Route>
+          </Switch>
 
     </Router>
 

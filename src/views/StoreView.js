@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import getItems from '../model/getItems'
+import {Link} from 'react-router-dom'
 
 
 const StoreView = (category) => {
@@ -17,11 +18,13 @@ const StoreView = (category) => {
             return (
            <>
            {items.map(item => {
+               console.log(item)
                return(
                 <>
-               <p>{item.title[0]}</p>
+                <p><Link to ={`/store/${category.category}/${item.itemId[0]}`} >{item.title[0]}</Link></p>
                <img src = {item.galleryURL[0]} />
                <b>${item.sellingStatus[0].convertedCurrentPrice[0].__value__}</b>
+
                </>
                )
            })}
