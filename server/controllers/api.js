@@ -126,7 +126,7 @@ apiRouter.post('/api/login', async (req, res) => {
         
                 return res.status(200).json({token, id: user.id, firstname: user.firstname})
             } else {
-                return res.send ({error: 'invalid id or password'})
+                return res.send('invalid id or password')
             }
         }
     })
