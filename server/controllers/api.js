@@ -28,10 +28,11 @@ const userSchema = new mongoose.Schema({
 
 
 //had to do a little adjusting while debugging something
+//this function is no longer used in this version using mongoose
 const getUser = (id) => {
     var user = null
     var userId = id
-    console.log('i am being called', userId)
+    console.log('i am being called ', userId)
 
     // data.users.filter(u => {
     //     if (u.id == id) {
@@ -54,33 +55,20 @@ const getUser = (id) => {
 
 //registration
 //I've commented out lines using the old method for reference if we decide to implement a different database
+//also added required to the fields in the form so there's no need to check if it's incomplete
 apiRouter.post('/api/users', (req, res) => {
-    console.log('i am being called!')
     const body = req.body   
-    console.log(req.body)
+    console.log('heres the request',req.body)
 
-    if (!body.id || !body.password || !body.firstname || !body.lastname || !body.email) {
-
-        return res.status(401).json({error: 'Please complete the form.'})
-    }
-
-    // const idCheck = data.users.find(user => user.id === body.id)
-    const idCheck = User.findOne({id: body.id})
-    // const emailCheck = data.users.find(user => user.email === body.email)
-    var emailCheck = null
-    User.find({email: body.email}, function(result) {
-        console.log(result)
-        emailCheck = result
-    })
-
-    if (idCheck) {
-        return res.status(401).json({error: 'Id is already exist'})
-    }
-
-    if (emailCheck) {
-        console.log(emailCheck)
-        return res.status(401).json({error: 'email is already exist'})
-    }
+    var existingUser = null
+    User.find({id: body.id}, function(err, result) {
+        if (err) {
+            console.log('error finding user in database')
+        } else {
+        existingUser = result
+        console.log('here is the user/s', existingUser) 
+        
+        if (existingUser == null || existingUser.length === 0) {
 
     bcrypt.hash(body.password, 10)
     .then(result => {
@@ -94,14 +82,22 @@ apiRouter.post('/api/users', (req, res) => {
         })
     
         newUser.save().then(result => {
-            console.log('user has been added to the database!')
+            console.log('user has been added to the database!', result)
         })
 
 
         // data.users.push(newUser)
-        console.log(newUser.password)
-        return res.json('Complete the registration! Please log in to start shopping.')
+        return res.json('Completed the registration! Please log in to start shopping.')
     })
+
+} else {
+    console.log('an account was not created')
+    res.json('An existing user was found with the same credentials, please try a different ID')
+}
+        }
+
+})
+
 })
 
 //login
@@ -111,10 +107,14 @@ apiRouter.post('/api/login', async (req, res) => {
     var user = null
     User.find({id: id}, async function(err, result) {
         if(err){
-            return res.status(401).json({error: 'invalid id or password'})
+            return res.send({error: 'invalid id or password'})
 
+        } else if (result.length == 0) {
+            console.log('user not found')
+            res.send('user not found')
         } else {
             user = result[0]
+            console.log('this is the user', result)
             console.log('here is the result',user.password)
             if (await bcrypt.compare(password, user.password)) {
         
@@ -126,7 +126,7 @@ apiRouter.post('/api/login', async (req, res) => {
         
                 return res.status(200).json({token, id: user.id, firstname: user.firstname})
             } else {
-                return res.status(401).json({error: 'invalid id or password'})
+                return res.send ({error: 'invalid id or password'})
             }
         }
     })

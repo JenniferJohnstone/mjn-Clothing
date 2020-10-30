@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import login from '../model/login'
 
 const LoginForm = ({setUser}) => {
-    const [password, setPassword] = useState(' ')
-    const [id, setId] = useState(' ')
+    const [password, setPassword] = useState(null)
+    const [id, setId] = useState(null)
 
     const Login = (event) => {
         event.preventDefault()
