@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 //retrieves items from ebay under the category Women's Clothing
-const getGeneralItems = (setItem, category, id) => {
+const getItem = (setItem, category, id) => {
 
     var url = 'http://localhost:3001/api/shop' 
     console.log('here is', setItem, category, id)
@@ -26,4 +26,4 @@ const getGeneralItems = (setItem, category, id) => {
     })
 }
 
-export default getGeneralItems
+export default getItem

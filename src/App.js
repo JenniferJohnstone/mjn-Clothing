@@ -8,6 +8,7 @@ import LoginForm from './views/loginForm'
 import StoreView from './views/StoreView'
 import ItemMenu from './views/ItemMenu'
 import ItemView from './views/itemView'
+import Search from './views/Search'
 
 
 
@@ -50,6 +51,7 @@ function App() {
         <Route path ='/home'>
        
           <ItemMenu />
+          <Search />
 
           <StoreView category = {'general'}/>
         </Route>

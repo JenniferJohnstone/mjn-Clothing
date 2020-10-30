@@ -18,7 +18,6 @@ const StoreView = (category) => {
             return (
            <>
            {items.map(item => {
-               console.log(item)
                return(
                 <>
                 <p><Link to ={`/store/${category.category}/${item.itemId[0]}`} >{item.title[0]}</Link></p>
@@ -30,7 +29,7 @@ const StoreView = (category) => {
            })}
            </>
        )
-        }
+        }  
     }
 
     return(

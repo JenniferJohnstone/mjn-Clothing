@@ -2,9 +2,10 @@ import axios from 'axios'
 
 
 //retrieves items from ebay under the category Women's Clothing
-const getGeneralItems = (setItems, category) => {
+const getItems = (setItems, category) => {
 
     var url = 'http://localhost:3001/api/shop' 
+    console.log(category)
 
     //I wrote this filter to get rid of items that had blank thumbnails for their picture, didn't look very good
     const BlankThumbs = (items) => {
@@ -20,4 +21,4 @@ const getGeneralItems = (setItems, category) => {
     })
 }
 
-export default getGeneralItems
+export default getItems
