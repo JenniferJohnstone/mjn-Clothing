@@ -2,16 +2,16 @@ import React, {useState} from 'react'
 import login from '../model/login'
 
 const LoginForm = ({setUser}) => {
-    const [password, setPassword] = useState(' ')
-    const [id, setId] = useState(' ')
+    const [password, setPassword] = useState(null)
+    const [id, setId] = useState(null)
+    const [response, setResponse] = useState(null)
 
     const Login = (event) => {
         event.preventDefault()
-        login(id, password, setUser)
+        login(id, password, setUser, setResponse)
         setPassword(' ')
         setId(' ')
     }
-
 
     return(
         <>
@@ -20,6 +20,7 @@ const LoginForm = ({setUser}) => {
             <label for ='password'> password </label> <input type="text" value = {password}  onChange = {event => setPassword(event.target.value)}></input>
             <button onClick={Login}>login</button>
         </form>
+        <p>{response}</p>
         </>
     )
 
