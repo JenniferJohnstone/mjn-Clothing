@@ -81,10 +81,6 @@ apiRouter.post('/api/users', (req, res) => {
             email: body.email
         })
     
-<<<<<<< HEAD
-        data.users.push(newUser)
-        return res.status(200).json('Complete the registration! Please log in to start shopping.')
-=======
         newUser.save().then(result => {
             console.log('user has been added to the database!', result)
         })
@@ -92,7 +88,6 @@ apiRouter.post('/api/users', (req, res) => {
 
         // data.users.push(newUser)
         return res.json('Completed the registration! Please log in to start shopping.')
->>>>>>> 43705f4b86708d3d587b6a0d3b8ddfa3f67aaa95
     })
 
 } else {
