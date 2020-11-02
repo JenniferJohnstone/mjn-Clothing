@@ -34,8 +34,10 @@ const StoreView = (category) => {
 
     return(
         <>
+        <div className="product">
         <h2>Here is a place where some items should be rendered</h2>
         <RenderItems items = {items} />
+        </div>
         </>
     )
 

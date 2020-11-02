@@ -15,9 +15,10 @@ const LoginForm = ({setUser}) => {
 
     return(
         <>
-        <form>
-            <label for ='email'> userID </label> <input type="text" value = {id}  onChange = {event => setId(event.target.value)}></input>
-            <label for ='password'> password </label> <input type="text" value = {password}  onChange = {event => setPassword(event.target.value)}></input>
+        <form className="form">
+        <h4><b>Please login or register to get started: </b></h4>
+            <label for ='email'  name="id"> </label> <input type="text"  placeholder="User ID" value = {id}  onChange = {event => setId(event.target.value)}></input>
+            <label for ='password' name="password"></label> <input type="text"   placeholder="Password" value = {password}  onChange = {event => setPassword(event.target.value)}></input>
             <button onClick={Login}>login</button>
         </form>
         <p>{response}</p>

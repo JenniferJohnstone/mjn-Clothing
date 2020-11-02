@@ -36,9 +36,15 @@ const ItemView = () => {
 
         return(
             <>
+            <div className="row">
+            <div className="eleven columns">
+                
             <p>Here is the item view</p>
             <RenderItem item = {item} />
-            </>)
+            </div>
+            </div>
+            </> )
+            
 
 }
 

@@ -41,19 +41,29 @@ const Registration = () => {
 
     return (
         <>
-        <div style = {formStyle}>
-        <h2>Please Register your details below to get started!</h2>
-        <form onSubmit={registerUser} encType="multipart/form-data">
+        <div className="row">
+        <div className="eleven columns" style = {formStyle}>
+        
+        <h2>Please <b>Register</b> your details below to get started!</h2>
+        <form class="reg-form" onSubmit={registerUser} encType="multipart/form-data">
 
-            <h4>id</h4> <input type = "text" required value ={id} onChange = {event => setid(event.target.value)}></input>
-            <h4>first name</h4> <input type = "text" required value ={firstName} onChange = {event => setFirstName(event.target.value)}></input>
-            <h4>last name</h4> <input type = "text" required value ={lastName} onChange = {event => setLastName(event.target.value)}></input>
-            <h4>password</h4> <input type = "text" required value ={password} onChange = {event => setPassword(event.target.value)}></input>
-            <h4>email</h4> <input type = "text" required value ={email} onChange = {event => setEmail(event.target.value)}></input>
+            <label>ID</label> 
+            <input  type = "text" placeholder="Type your preferred userID.." required value ={id} onChange = {event => setid(event.target.value)}></input>
+            <label>First name</label>
+             <input  type = "text" placeholder="Type your firstname.." required value ={firstName} onChange = {event => setFirstName(event.target.value)}></input>
+            <label>Last name</label> 
+            <input   type = "text" placeholder="Type your lastname.." required value ={lastName} onChange = {event => setLastName(event.target.value)}></input>
+            <label>Password</label> 
+            <input type = "password" placeholder="Password.." required value ={password} onChange = {event => setPassword(event.target.value)}></input>
+            <label>Email address</label> 
+            <input  type = "text"  placeholder="Type your Email address.."required value ={email} onChange = {event => setEmail(event.target.value)}></input>
 
-            <button style = {buttonStyle}>Create User</button>
+            <button style = {buttonStyle}>Register</button>
         </form>
+         
+        </div>
     </div>
+    
     </>
     )
 } 

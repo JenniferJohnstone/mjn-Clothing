@@ -58,13 +58,11 @@ const Search = () => {
 
   return (
     <div className="App">
-      <input
-        type="text"
-        placeholder="Search"
-        value={searchTerm}
+      <div className="search">
+      <input type="text" placeholder="Search" value={searchTerm}
         onChange={(event) => onSearch(event)}
       />
-      <label for ="category"> Category </label>
+      <label for ="category"> </label>
         <select name = "category" id = "category" onChange={(event) => {
             onCategoryChange(event)
         }}>
@@ -75,7 +73,9 @@ const Search = () => {
             <option value ="skirts">Skirts</option>
             <option value ="pants">Pants</option>
         </select>
+        <button type="submit"><i class="fa fa-search"></i></button>
         <SearchButton />
+        </div>
     </div>
   );
 }

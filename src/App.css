@@ -1,0 +1,220 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+.link{
+    background-color:white;
+    width: 100%;
+    height:10px;
+   font-size: 15px;
+    color: black;
+    padding: 5px;
+
+}
+.link h3{
+    text-decoration: underline;
+   float: right;
+    margin-top: 0;
+    font-size: 26px;
+    
+}
+.link h4{
+    font-size: 13px;
+}
+/*home nav tag*/
+.nav-top{
+    float: left;
+    margin-top: 5px;
+    padding: 2px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid white;
+    background-color:rgb(241, 225, 228);
+    border-radius: 50%;
+    
+
+   
+   
+}
+.nav-top:hover{
+    background-color:black;
+    color:white;
+    opacity: 0.8;
+}
+/*home nav search top*/
+.home-search{
+    float: right;
+}
+.login{
+    float: left;
+}
+/* Login form */
+.form{
+   
+    float: right;
+    
+    font-size: 12px;
+    margin: 0;
+    padding: 10;
+    
+}
+.form h4{
+    margin-left: 1px;
+    padding:5px;
+    text-decoration:overline;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.form label{
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+   
+}
+.form input{
+    
+    margin:2px;
+    width: 180px;
+
+}
+
+.form button{
+    text-align: center;
+    width: 70px;
+    padding: 1px;
+    margin: 6px;
+    background-color: #f1f1f1;
+    color:black;
+}
+/*searc bar*/
+.search{
+    float:right;
+    
+    margin: 0;
+    padding: 0;
+    
+}
+
+.search input{
+    display: inline;
+    
+    padding: 10px;
+    margin-left: 0; 
+}
+.search label{
+    display: inline;
+    margin-left: 2px;
+    padding: 5px;
+    
+
+}
+
+.search button {
+
+    float: right;
+    margin-right: 5px;
+    margin-left: 10px;
+    width: 35px;
+    padding: 2px;
+    background: #f1f1f1;;
+    color: black;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+
+/* clothes navbar*/
+.register{
+    margin-top: 300px;
+    float: right;
+     margin-right: 0;
+     
+}
+.nav{
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    text-decoration: none;
+    list-style: none;
+    padding:10px;
+    overflow: hidden;
+
+}
+ .nav-tabs{
+     color: white;
+    text-decoration: none;
+    padding: 20px
+}
+
+.tab-register{
+    color: white;
+    text-decoration: none;
+    float: right;
+    margin-right: 10px;
+   
+}
+.tab-register:hover {
+    color: gray;
+   
+}
+.nav-tabs:hover {
+    color: gray;
+   
+}
+.product{
+    display: inline;
+    text-emphasis: none;
+}
+
+.product h2{
+    margin-top: 20px;
+    font-size: 25px;
+}
+.items{
+    
+    /*margin-top: 20px;*/
+    text-emphasis: none;
+}
+/* register page */
+.row h2{
+    margin-top: 20px;
+    font-size: 30px;
+}
+.reg-form{
+   border: 1px solid black;
+   margin-left: 20px;
+   padding: 15px;
+   widows: 800px;;
+}
+.reg-form label{
+    float: left;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.reg-form input[type=text], input[type=password]{
+  
+    display: inline-block;
+    background-color: #f1f1f1;
+    color: black;
+    width: 100%;
+    padding: 5px;
+}
+.reg-form input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+.reg-form button{
+    background-color: black;
+    color:white;
+}
+.reg-form button:hover{
+    opacity: 2;
+}
