@@ -19,12 +19,12 @@ const StoreView = (category) => {
            <>
            {items.map(item => {
                return(
-                <>
+                <div class='product listing'>
                 <p><Link to ={`/store/${category.category}/${item.itemId[0]}`} >{item.title[0]}</Link></p>
                <img src = {item.galleryURL[0]} />
                <b>${item.sellingStatus[0].convertedCurrentPrice[0].__value__}</b>
 
-               </>
+               </div>
                )
            })}
            </>
@@ -35,7 +35,6 @@ const StoreView = (category) => {
     return(
         <>
         <div className="product">
-        <h2>Here is a place where some items should be rendered</h2>
         <RenderItems items = {items} />
         </div>
         </>

@@ -29,7 +29,8 @@ function App() {
           <h3> <b>MJN Clothing</b></h3>  </div>
 
           <div className="seven columns">
-         <Search className="home-search" /></div>
+         <Search className="home-search" />
+         </div>
 
 
          <Switch>
@@ -63,9 +64,7 @@ function App() {
           <ItemMenu />
           <StoreView category = {'general'}/>
         </Route>
-      </Switch>
-      <div className="nav"></div>
-      <Switch>
+      </Switch>      <Switch>
         <Route path ='/shoes'>
           <ItemMenu />
           <StoreView category = {'shoes'}/>
