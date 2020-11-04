@@ -15,9 +15,9 @@
 }
 .link h3{
     text-decoration: underline;
-   float: right;
-    margin-top: 0;
-    font-size: 26px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 50px;
     
 }
 .link h4{
@@ -171,6 +171,11 @@
 .product{
     display: inline;
     text-emphasis: none;
+    margin-left: 100px;
+}
+.listing {
+    float: left;
+    width: 300px;
 }
 
 .product h2{
