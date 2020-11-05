@@ -246,4 +246,39 @@ apiRouter.post('/api/shop', (req,res) => {
     }
 })
 
+//this empty list will hold items in the cart, upon restarting the server or logging out the cart will be emptied. Might make changes to this so a user can still
+//have their cart after logging out and coming back.
+var shoppingCart = []
+
+//add to cart
+//this function will add the item to the list of items in cart from the server
+//if the item already exists it will update the quantity 
+apiRouter.post('/api/cart', (req,res) => {
+    console.log('shopping card', shoppingCart)
+    const cartItem = req.body.item
+    console.log('user',req.body.user)
+    var matchingItem = null
+    
+    if (shoppingCart.find(item => {
+        console.log('this will prob say undefined',item.item.itemId[0], cartItem.itemId[0])
+        matchingItem = item
+        return item.item.itemId[0] === cartItem.itemId[0]
+    
+    })) {
+        const index = shoppingCart.indexOf(matchingItem)
+        console.log('this is quantity', index)
+        const quantity = shoppingCart[index].quantity
+        shoppingCart[index] = {item : cartItem, quantity : (quantity + 1)}
+    } else {
+        shoppingCart.push({item: cartItem, quantity: 1})
+    }
+    console.log('shopping cart',shoppingCart)
+    res.send({message: 'item has been added', contents: shoppingCart})
+})
+
+apiRouter.post('/api/logout', (req, res) => {
+    console.log('logging out')
+    shoppingCart = []
+})
+
 module.exports = apiRouter

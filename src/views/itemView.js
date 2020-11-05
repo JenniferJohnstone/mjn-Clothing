@@ -10,7 +10,7 @@ const ItemView = ({user , response, setResponse}) => {
     const category = useParams().category
     const id = useParams().id
 
-    console.log('here it the id', id)
+    console.log('here is the id', id)
 
 
     const RenderItem = ({item}) => {
@@ -44,6 +44,7 @@ const ItemView = ({user , response, setResponse}) => {
                 
             <p>Here is the item view</p>
             <RenderItem item = {item} />
+            <p>Please login to start buying.</p>
             </div>
             </div>
             </> )
