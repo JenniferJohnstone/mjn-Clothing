@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import getItem from '../model/getItem'
 import {useParams} from 'react-router-dom'
+import addToCart from '../model/addToCart'
 
 
-const ItemView = () => {
+const ItemView = ({user , response, setResponse}) => {
 
     const [item, setItem] = useState(null)
     const category = useParams().category
@@ -15,12 +16,10 @@ const ItemView = () => {
     const RenderItem = ({item}) => {
         if (item == null) {
             getItem(setItem, {category}, id)
-            console.log('now calling get item')
             return ( 
             <>
             <p> Loading store...</p>
             </>) } else {
-                console.log('heres the item', item)
                 const product = item[0]
                 return(
                     <>
@@ -34,6 +33,8 @@ const ItemView = () => {
             }
         }
 
+       if (user == null) {
+
         return(
             <>
             <div className="row">
@@ -44,6 +45,19 @@ const ItemView = () => {
             </div>
             </div>
             </> )
+       } else {
+           return (
+            <>
+            <RenderItem item = {item} />
+            <button onClick={(event) => {
+                event.preventDefault()
+                addToCart(item[0], user, setResponse)
+            } }>Add to Cart</button>
+            
+
+            </>
+           )
+       }
             
 
 }

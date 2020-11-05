@@ -9,6 +9,7 @@ import StoreView from './views/StoreView'
 import ItemMenu from './views/ItemMenu'
 import ItemView from './views/itemView'
 import Search from './views/Search'
+import ShoppingCart from './views/shoppingCart'
 import logOut from './model/logout'
 import './App.css'
 
@@ -40,7 +41,8 @@ function App() {
         <div className="login">
         <Route path ='/'>
         {user.name
-            ?<><em>{user.name} is logged in</em> <button onClick = {() => logOut({setUser, setResponse})}>logout</button> </>
+            ?<><em>{user.name} is logged in</em> <button onClick = {() => logOut({setUser, setResponse})}>logout</button> 
+             <ShoppingCart contents = {response}/></>
             :<> 
             <LoginForm setUser = {setUser} /> 
             <Redirect to = "/home" />
@@ -99,7 +101,7 @@ function App() {
 
         <Switch>
               <Route path= '/store/:category/:id'>
-                <ItemView />
+              <ItemView user = {user.name} response ={response} setResponse ={setResponse} />
               </Route>
           </Switch>
           

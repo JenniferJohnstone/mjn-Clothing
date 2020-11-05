@@ -23,12 +23,13 @@ const Search = () => {
     //this is a function that reduces each item in the items array to it's title and then removes duplicate titles
     //I did this function because the searches were returning items that were different but had the same title 
     const titlesOnly = (array) => {
-      const titles = []
+      var titles = []
       array.forEach((item) => {
         if(!titles.includes(item.title[0])) {
           titles.push(item.title[0])
         }
       })
+      titles = titles.slice(0, 5)
       console.log('heres the results',titles)
       return titles
     }
@@ -73,7 +74,7 @@ const Search = () => {
             <option value ="skirts">Skirts</option>
             <option value ="pants">Pants</option>
         </select>
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" onClick={() => {}}><i class="fa fa-search"></i></button>
         <SearchButton />
         </div>
     </div>
