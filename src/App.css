@@ -207,11 +207,12 @@
     margin-top: 5px;
     margin-left: 50px;
     width:160px;
-    height: 200;
+    height: auto;
+    object-fit: contain;
 }
 .products p{
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 10px;
     margin-left: 20px;
     width:200px;
@@ -231,7 +232,7 @@
     border: 1px solid rgb(0,0,0, 0.4);
     float: left;
     width: 250px;
-    height: 300px;
+    height: 350px;
     overflow: hidden;
 }
 
@@ -274,7 +275,8 @@
     border: 1px solid gray;
     margin-left:350px;
     width: 450px;
-    height: 450px;
+    height: auto;
+    object-fit: cover;
 
 }
 /* register page */
