@@ -10,6 +10,13 @@ import ItemMenu from './views/ItemMenu'
 import ItemView from './views/itemView'
 import Search from './views/Search'
 import './App.css'
+import Footer from './views/Footer'
+import logo from './img/logo.jpg'
+import join from './img/join.jpg'
+import dresses from './img/dresses.jpg'
+import skirts from './img/skirts.jpg'
+import pants from './img/pants.jpg'
+import shoes from './img/shoes.jpg'
 
 
 
@@ -48,32 +55,47 @@ function App() {
         </ul>
       </div>
 
-  
-      
-      
-
+       
+     
       <Switch>
+       
         <Route path ='/registration'>
+        <div> <img className="reg-box" src={join}></img></div>
           <RegistrationForm />
         </Route>
       </Switch>
 
-    
+
+     
+      
+     
       <Switch>
+
+    
         <Route path ='/home'>
+       
+       
           <ItemMenu />
+          <div> <img className="photo-logo" src={logo}></img></div> 
+          <h3 className="home-title"> Some products for you!!</h3>
           <StoreView category = {'general'}/>
         </Route>
-      </Switch>      <Switch>
+       
+       
+      </Switch>    
+
+      <Switch>
         <Route path ='/shoes'>
           <ItemMenu />
+          <div> <img className="photo-logo2" src={shoes}></img></div> 
           <StoreView category = {'shoes'}/>
         </Route>
       </Switch>
-
+     
       <Switch>
         <Route path ='/dresses'>
           <ItemMenu />
+          <div> <img className="photo-logo2" src={dresses}></img></div> 
           <StoreView category = {'dresses'}/>
         </Route>
       </Switch>
@@ -82,6 +104,7 @@ function App() {
       <Switch>
         <Route path ='/skirts'>
           <ItemMenu />
+          <div> <img className="photo-logo2" src={skirts}></img></div> 
           <StoreView category = {'skirts'}/>
         </Route>
       </Switch>
@@ -89,9 +112,12 @@ function App() {
       <Switch>
         <Route path ='/pants'>
           <ItemMenu />
+          <div> <img className="photo-logo2" src={pants}></img></div> 
           <StoreView category = {'pants'}/>
         </Route>
+       
       </Switch>
+     
       
 
         <Switch>
@@ -99,8 +125,14 @@ function App() {
                 <ItemView />
               </Route>
           </Switch>
+
+          <Footer/>
           
+
+         
     </Router>
+
+  
    
 
     </> 

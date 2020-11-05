@@ -24,11 +24,13 @@ const ItemView = () => {
                 const product = item[0]
                 return(
                     <>
+                    <div className= "productDetails">
                     <h1>{product.title[0]}</h1>
-                    <img src = {product.galleryPlusPictureURL[0]} />
+                    <img className= "productImage" src = {product.galleryPlusPictureURL[0]} />
                     <p>Condition: {product.condition[0].conditionDisplayName[0]}</p>
                     <p>Product Location: {product.location[0]}</p>
                     <p>Product type: {product.primaryCategory[0].categoryName[0]}</p>
+                    </div>
                     </>
                 )
             }

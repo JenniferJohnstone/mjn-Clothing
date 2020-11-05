@@ -41,11 +41,14 @@ const Registration = () => {
 
     return (
         <>
+
+       
+        <div className="reg-page">
         <div className="row">
         <div className="eleven columns" style = {formStyle}>
         
         <h2>Please <b>Register</b> your details below to get started!</h2>
-        <form class="reg-form" onSubmit={registerUser} encType="multipart/form-data">
+        <form className="reg-form" onSubmit={registerUser} encType="multipart/form-data">
 
             <label>ID</label> 
             <input  type = "text" placeholder="Type your preferred userID.." required value ={id} onChange = {event => setid(event.target.value)}></input>
@@ -62,6 +65,7 @@ const Registration = () => {
         </form>
          
         </div>
+    </div>
     </div>
     
     </>

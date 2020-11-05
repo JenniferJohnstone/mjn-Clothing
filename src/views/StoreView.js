@@ -19,11 +19,15 @@ const StoreView = (category) => {
            <>
            {items.map(item => {
                return(
-                <div class='product listing'>
-                <p><Link to ={`/store/${category.category}/${item.itemId[0]}`} >{item.title[0]}</Link></p>
-               <img src = {item.galleryURL[0]} />
-               <b>${item.sellingStatus[0].convertedCurrentPrice[0].__value__}</b>
 
+                <div className="products">
+                <div className="productList">
+                <img src = {item.galleryURL[0]} />
+                <p><Link to ={`/store/${category.category}/${item.itemId[0]}`} >{item.title[0]}</Link></p>
+                
+               <b className="price">${item.sellingStatus[0].convertedCurrentPrice[0].__value__}</b>
+               </div>
+ 
                </div>
                )
            })}
@@ -34,7 +38,7 @@ const StoreView = (category) => {
 
     return(
         <>
-        <div className="product">
+        <div className="products">
         <RenderItems items = {items} />
         </div>
         </>
