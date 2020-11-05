@@ -9,14 +9,17 @@ import StoreView from './views/StoreView'
 import ItemMenu from './views/ItemMenu'
 import ItemView from './views/itemView'
 import Search from './views/Search'
+import logOut from './model/logout'
 import './App.css'
 
 
 
 function App() {
 
-  const [user, setUser] = useState(null)
-  const[products]= useState([])
+  const [user, setUser] = useState({name: null, 
+    cart: null})
+    const [response, setResponse] = useState(null)
+  
 
   return (
     <>
@@ -36,8 +39,8 @@ function App() {
          <Switch>
         <div className="login">
         <Route path ='/'>
-        {user
-            ?<><em>{user} is logged in</em> <button onClick = {() => setUser(null)}>logout</button> </>
+        {user.name
+            ?<><em>{user.name} is logged in</em> <button onClick = {() => logOut({setUser, setResponse})}>logout</button> </>
             :<> 
             <LoginForm setUser = {setUser} /> 
             <Redirect to = "/home" />

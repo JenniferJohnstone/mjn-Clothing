@@ -9,7 +9,7 @@ const login = (id, password, setUser, setResponse) => {
             console.log('this was the respone',response)
             const user = response.data.firstname
             console.log('this is the user', user)
-            setUser(user)
+            setUser({name: response.data.firstname})
             setResponse(response.data)
         })
 }
