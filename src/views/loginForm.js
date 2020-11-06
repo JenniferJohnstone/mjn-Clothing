@@ -1,16 +1,17 @@
 import React, {useState} from 'react'
 import login from '../model/login'
 
-const LoginForm = ({setUser}) => {
+const LoginForm = ({setUser, setResponse}) => {
     const [password, setPassword] = useState(null)
     const [id, setId] = useState(null)
-    const [response, setResponse] = useState(null)
+    const [message, setMessage] = useState(null)
 
     const Login = (event) => {
         event.preventDefault()
-        login(id, password, setUser, setResponse)
-        setPassword(' ')
-        setId(' ')
+        console.log('credentials', id, password)
+        login(id, password, setUser, setMessage, setResponse)
+        setPassword('')
+        setId('')
     }
 
     return(
@@ -21,7 +22,7 @@ const LoginForm = ({setUser}) => {
             <label for ='password' name="password"></label> <input type="text"   placeholder="Password" value = {password}  onChange = {event => setPassword(event.target.value)}></input>
             <button onClick={Login}>login</button>
         </form>
-        <p>{response}</p>
+        <p>{message}</p>
         </>
     )
 

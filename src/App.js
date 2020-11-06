@@ -24,10 +24,8 @@ import shoes from './img/shoes.jpg'
 
 function App() {
 
-  const [user, setUser] = useState({name: null, 
-    cart: null})
-    const [response, setResponse] = useState(null)
-  
+  const [user, setUser] = useState({name: null, cart: null})
+  const [response, setResponse] = useState(null)
 
   return (
     <>
@@ -47,11 +45,14 @@ function App() {
          <Switch>
         <div className="login">
         <Route path ='/'>
-        {user.name
-            ?<><em>{user.name} is logged in</em> <button onClick = {() => logOut({setUser, setResponse})}>logout</button> 
+        {user.name 
+            ?<><em>{user.name} is logged in</em> <button onClick = {() => {
+              logOut({user, response, setUser, setResponse})
+            }
+            }>logout</button> 
              <ShoppingCart contents = {response}/></>
             :<> 
-            <LoginForm setUser = {setUser} /> 
+            <LoginForm setUser = {setUser} setResponse = {setResponse}/> 
             <Redirect to = "/home" />
              </>
         } </Route> </div>
@@ -127,7 +128,7 @@ function App() {
 
         <Switch>
               <Route path= '/store/:category/:id'>
-              <ItemView user = {user.name} response ={response} setResponse ={setResponse} />
+              <ItemView user = {user.name} setResponse = {setResponse} />
               </Route>
           </Switch>
 

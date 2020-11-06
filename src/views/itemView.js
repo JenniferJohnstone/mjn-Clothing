@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom'
 import addToCart from '../model/addToCart'
 
 
-const ItemView = ({user , response, setResponse}) => {
+const ItemView = ({user, setResponse}) => {
 
     const [item, setItem] = useState(null)
     const category = useParams().category

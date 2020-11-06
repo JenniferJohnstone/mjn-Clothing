@@ -13,11 +13,11 @@ const Registration = () => {
     const registerUser = (event) => {
         event.preventDefault()
         Register(id, firstName, lastName, password, email, setResponse)
-        setid(' ')
-        setPassword(' ')
-        setFirstName(' ')
-        setLastName(' ')
-        setEmail(' ')
+        setid(null)
+        setPassword(null)
+        setFirstName(null)
+        setLastName(null)
+        setEmail(null)
     }
 
     const buttonStyle = {

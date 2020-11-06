@@ -17,14 +17,23 @@ const url = 'mongodb+srv://assignment:' + SECRET + '@cluster0.arbvm.mongodb.net/
 mongoose.connect(url,  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
 
 const userSchema = new mongoose.Schema({
-    id: String,
+    _id: String,
     password: String,
     firstname: String,
     lastname: String,
-    email: String
+    email: String, 
+    cart: [{
+        itemId:  String,
+        title: String,
+        quantity: Number, 
+        price: Number, 
+        picture: String
+    }]
   })
 
   const User = mongoose.model('User', userSchema)
+  //the shopping cart is defined outside of server functions so that they all can access it 
+var shoppingCart = null
 
 
 //had to do a little adjusting while debugging something
@@ -40,7 +49,7 @@ const getUser = (id) => {
     //     }
     // })
 
-    User.find({id: userId}, function(err, result) {
+    User.find({ _id: userId}, function(err, result) {
         if (err) {
             console.log('error finding user in database')
         } else {
@@ -65,7 +74,7 @@ apiRouter.post('/api/users', (req, res) => {
     console.log('heres the request',req.body)
 
     var existingUser = null
-    User.find({id: body.id}, function(err, result) {
+    User.find({_id: body.id}, function(err, result) {
         if (err) {
             console.log('error finding user in database')
         } else {
@@ -78,11 +87,12 @@ apiRouter.post('/api/users', (req, res) => {
     .then(result => {
 
         const newUser = new User ({
-            id: body.id,
+            _id: body.id,
             password: result,
             firstname: body.firstname,
             lastname: body.lastname,
-            email: body.email
+            email: body.email, 
+            cart: null
         })
     
         newUser.save().then(result => {
@@ -109,17 +119,16 @@ apiRouter.post('/api/login', async (req, res) => {
     const {id, password} = req.body
 
     var user = null
-    User.find({id: id}, async function(err, result) {
+    User.find({_id: id}, async function(err, result) {
         if(err){
             return res.send({error: 'invalid id or password'})
 
         } else if (result.length == 0) {
             console.log('user not found')
-            res.send('user not found')
+            res.send({error: 'user not found'})
         } else {
             user = result[0]
             console.log('this is the user', result)
-            console.log('here is the result',user.password)
             if (await bcrypt.compare(password, user.password)) {
         
                 const userToken = {
@@ -127,10 +136,10 @@ apiRouter.post('/api/login', async (req, res) => {
                     firstname: user.firstname
                 }
                 const token = jwt.sign(userToken, SECRET)
-        
-                return res.status(200).json({token, id: user.id, firstname: user.firstname})
+                shoppingCart = user.cart
+                return res.status(200).json({token, id: user.id, firstname: user.firstname, cart: user.cart})
             } else {
-                return res.send('invalid id or password')
+                return res.send({error: 'invalid id or password'})
             }
         }
     })
@@ -248,36 +257,60 @@ apiRouter.post('/api/shop', (req,res) => {
 
 //this empty list will hold items in the cart, upon restarting the server or logging out the cart will be emptied. Might make changes to this so a user can still
 //have their cart after logging out and coming back.
-var shoppingCart = []
 
 //add to cart
 //this function will add the item to the list of items in cart from the server
 //if the item already exists it will update the quantity 
 apiRouter.post('/api/cart', (req,res) => {
-    console.log('shopping card', shoppingCart)
+    console.log('shopping cart before', shoppingCart)
     const cartItem = req.body.item
-    console.log('user',req.body.user)
+    console.log('user',req.body)
     var matchingItem = null
-    
-    if (shoppingCart.find(item => {
-        console.log('this will prob say undefined',item.item.itemId[0], cartItem.itemId[0])
-        matchingItem = item
-        return item.item.itemId[0] === cartItem.itemId[0]
-    
-    })) {
-        const index = shoppingCart.indexOf(matchingItem)
-        console.log('this is quantity', index)
-        const quantity = shoppingCart[index].quantity
-        shoppingCart[index] = {item : cartItem, quantity : (quantity + 1)}
-    } else {
-        shoppingCart.push({item: cartItem, quantity: 1})
+    if(shoppingCart !== null){
+        if (shoppingCart.find(item => {
+            console.log('this will prob say undefined', item.itemId, cartItem.itemId[0])
+            matchingItem = item
+            return item.itemId === cartItem.itemId[0]
+        
+        })) {
+            const index = shoppingCart.indexOf(matchingItem)
+            const quantity = shoppingCart[index].quantity
+            const item = {  
+                itemId: cartItem.itemId[0],      
+                title: cartItem.title[0],
+                quantity: (quantity + 1), 
+                price: cartItem.sellingStatus[0].convertedCurrentPrice[0].__value__, 
+                picture: cartItem.galleryURL[0]
+            }
+            console.log('quantity updated', item)
+            shoppingCart[index] = item
+    }} else {
+        shoppingCart = []
+        const item = {  
+            itemId: cartItem.itemId[0],      
+            title: cartItem.title[0],
+            quantity: 1, 
+            price: cartItem.sellingStatus[0].convertedCurrentPrice[0].__value__, 
+            picture: cartItem.galleryURL[0]
+        }
+        shoppingCart.push(item)
     }
-    console.log('shopping cart',shoppingCart)
+    console.log('item pushed to cart',shoppingCart)
     res.send({message: 'item has been added', contents: shoppingCart})
 })
 
 apiRouter.post('/api/logout', (req, res) => {
-    console.log('logging out')
+    console.log('logging out', req.body.user.name)
+    console.log('request', req.body.response)
+    if (req.body.response){
+        console.log('the cart is not empty?', req.body.cart)
+        User.findByIdAndUpdate(req.body.user.name, {cart: req.body.response}, function(err, result) {
+            if(err) {
+                console.log('error updating cart', err)
+            }
+            console.log('there was a result?', result)
+        })
+    }
     shoppingCart = []
 })
 

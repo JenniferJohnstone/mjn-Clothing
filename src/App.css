@@ -50,6 +50,37 @@
 .login{
     float: left;
 }
+/* Shopping Cart*/
+
+.cartItems{
+    list-style: none;
+    display: block;
+    position: relative;
+    z-index: 2;
+    left: 200;
+    top: 200;
+}
+.cartItems img{
+    width: 50px;
+    float: left;
+}
+.ShoppingCart {
+    display: block;
+    float: right;
+    width: 250px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ShoppingCart h3 {
+    font-size: 40px;
+}
+
+.ShoppingCart .cartItems{
+    display: absolute;
+}
+
 /* Login form */
 .form{
    

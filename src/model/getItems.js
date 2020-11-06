@@ -15,6 +15,7 @@ const getItems = (setItems, category) => {
     //note to self, send category to API to get item types 
     axios.post(url, category)
     .then(response => {
+        console.log('this is the response to getting the items', response.data)
         var items = response.data.findItemsByCategoryResponse[0].searchResult[0].item
         items = items.filter(BlankThumbs)
         setItems(items)
