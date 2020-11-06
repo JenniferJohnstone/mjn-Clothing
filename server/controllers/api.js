@@ -267,12 +267,14 @@ apiRouter.post('/api/cart', (req,res) => {
     console.log('user',req.body)
     var matchingItem = null
     if(shoppingCart !== null){
-        if (shoppingCart.find(item => {
+     //check if the item is already in cart 
+     if (shoppingCart.find(item => {
             console.log('this will prob say undefined', item.itemId, cartItem.itemId[0])
             matchingItem = item
             return item.itemId === cartItem.itemId[0]
-        
-        })) {
+    }))
+        {
+        //if the item is there
             const index = shoppingCart.indexOf(matchingItem)
             const quantity = shoppingCart[index].quantity
             const item = {  
@@ -285,9 +287,8 @@ apiRouter.post('/api/cart', (req,res) => {
             console.log('quantity updated', item)
             shoppingCart[index] = item
     } else {
-        if(shoppingCart == null){
-            shoppingCart = []
-        }
+
+        //shopping cart isn't null but the item isn't there 
         const item = {  
             itemId: cartItem.itemId[0],      
             title: cartItem.title[0],
@@ -298,9 +299,21 @@ apiRouter.post('/api/cart', (req,res) => {
         console.log('push', item)
         shoppingCart.push(item)
     }
-    console.log('item pushed to cart',shoppingCart)
+} else {
+            //the shopping cart is null 
+            console.log('shoppping cart is empty',shoppingCart)
+            shoppingCart = []
+            const item = {  
+                itemId: cartItem.itemId[0],      
+                title: cartItem.title[0],
+                quantity: 1, 
+                price: cartItem.sellingStatus[0].convertedCurrentPrice[0].__value__, 
+                picture: cartItem.galleryURL[0]
+            }
+            console.log('push', item)
+            shoppingCart.push(item)
+        }
     res.send({message: 'item has been added', contents: shoppingCart})
-}
 })
 
 apiRouter.post('/api/logout', (req, res) => {
