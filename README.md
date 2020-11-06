@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Main purpose of project:
 
-## Available Scripts
+The main purpose of our project is to provide an e-commerce platform for those who are interested in online shopping. Our web application is called MJN Clothing, which is made from our team member’s initials. In addition, creating an e-commerce platform would be challenging and enjoyable for us, so we tried to provide a variety of products for our potential customers with the modern design of website. 
 
-In the project directory, you can run:
 
-### `npm start`
+## Target users:
+The main target users for this web application are females aged between 19-35; however, it is assumed the users older than 35 years old might shop for gifts or their children. Therefore, we have targeted the young generation.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Achieved component and Target Minimum Viable:
+During three/four weeks’ time of the project we could achieve and impalement almost all components and features we expected at the beginning of the project. Hence, according to our milestones we implemented the login and register form for the customers to register or log in to the website and continue shopping for their profile. Moreover, our website has the view the product in a single page and adding to shopping card. Furthermore, the search bar on the top with the navigation bar have made the navigation easy for customers to find the product they have in their mind. Moreover, there is a fixed-on home button that help the users to go back to the home page and see the top products that is shown on the home page.   However, as it was expected we could not implement the payment system because our team includes only three team members and there have been many challenging features that were required to implement. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## section blow compares our expected stages in our milestones with what we could actually implement during our project:
+Expected Milestones	
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Week 10:        -Basic feature of the application
+                -Registration and Login feature
+                -Creating a database with sample data	
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Week 11:	    -Displaying product 
+                -Search bar
+                -Shopping cart	
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Week 12:         -Designing
+                 -Payment system		
 
-### `npm run eject`
+Week 13:       	-Organize & Document the code
+                -finish designing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Achieved:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Week 10:        -Basic features of application
+                -Registration and login form
+                -Sample data
+                 -Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Week 11:     	-Displaying product (with eBay API)
+                -Testing
+                -Starting search bar
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Week 12:        -Search bar
+                -Shopping cart
+                -Starting Designing
 
-## Learn More
+Week 13: 	    -Finished designing
+                -completed the Add to card function
+                -Organised the documents and codes
+                -Deployed the app
+                -Provided Readme file 
+                -Provided the screenshots/ demo video of the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## project source code - where should we look for what you have done
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+## Our next steps would be if you were to continue the project
+If we could continue working on the project, we focus on bringing a better API product that products quality and visual merchandises are superior and they more accord what we expected from our e-commerce website. Moreover, we would work on the payment methods that can be a challenging stage of our project.  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Communication, interaction and contribution:
+ Interaction and connection among of our team was very good and we could communicate and share our ideas very easily with each other. We communicated with each other through Facebook chat and we had few Zoom meetings as we needed. Moreover, we tried to help each other in the tasks that seemed difficult for us and all the team members were responsible and accessible for communication
 
-### Advanced Configuration
+Contribution and Roles:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Min: 	   Back-end and Testing	
+Jennifer:  Font-end and Product API(ebay)	
+Negin:	   Designing, database(sampledata), Screenshots and Readme file
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

@@ -21,7 +21,7 @@ const Search = () => {
       return array.toUpperCase().includes(term) 
     }
     //this is a function that reduces each item in the items array to it's title and then removes duplicate titles
-    //I did this function because the searches were returning items that were different but had the same title 
+    //I included this function because the searches were returning items that were different but had the same title 
     const titlesOnly = (array) => {
       var titles = []
       array.forEach((item) => {
@@ -74,7 +74,7 @@ const Search = () => {
             <option value ="skirts">Skirts</option>
             <option value ="pants">Pants</option>
         </select>
-        <button type="submit" onClick={() => {}}><i class="fa fa-search"></i></button>
+        <button type="submit" onClick={() => {}}><i className="fa fa-search"></i></button>
         <SearchButton />
         </div>
     </div>

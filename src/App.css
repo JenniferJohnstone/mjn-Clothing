@@ -1,6 +1,7 @@
 
 *{
     box-sizing: border-box;
+   
     
 }
 
@@ -27,11 +28,14 @@
 .nav-top{
     float: left;
     margin-top: 5px;
+    text-align: center;
     padding: 2px;
     font-size: 16px;
     text-decoration: none;
     color: black;
     font-weight: bold;
+    width: 90px;
+    height: 35px;
     border: 1px solid white;
     background-color:rgb(241, 225, 228);
     border-radius: 50%;
@@ -48,7 +52,8 @@
     float: right;
 }
 .login{
-    float: left;
+    position: relative;
+ 
 }
 /* Shopping Cart*/
 
@@ -206,19 +211,18 @@
     height:600px;
     object-fit: contain;
     margin-bottom: 50px;
+
   
 }
 
 .photo-logo2{
-    border: 1px solid white;
-    
+    border: 1px solid rgb(241, 225, 228);
     width: 100%;
     height:350px;
     margin-top: 0;
     object-fit: contain;
     margin-bottom: 50px;
     object-fit: contain;
-  
 }
 
 .home-title{
@@ -279,19 +283,117 @@
     color: black;
 }
 
+/*log out button*/
+
+.logout{
+
+    position: relative;
+
+}
+/* shopping card styles*/
+
+.empty{
+
+   display: block;
+   padding: 1px;
+ 
+    
+}
+.empty h3{ 
+    text-align: center;
+    float: right;
+    margin-left: 300px;
+    margin-right: 5px;
+    width: 250px;
+    font-size: 20px;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color:rgb(241, 225, 228);
+    color: black;
+   
+
+}
+.empty h4{
+    text-align: center;
+ 
+    font-size: 14px;
+    float: right;
+   margin-left: 700px;
+   margin-right: 100px;
+ 
+}
+
+
+
+
+.shopCard{
+    position: relative;
+    display: block;
+    float: right;
+    margin-left: 800px;
+    width: 250px;
+    height: 100px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+
+.shopCard-head h3{
+    float: right;
+    margin-left: 200px;
+    margin-right: 10px;
+    width: 250px;
+    font-size: 20px;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color:rgb(241, 225, 228);
+    color: black;
+}
+
+.shopCard img{
+    display: relative;
+     margin-left: 10px;
+
+
+}
+.shopCard p{
+    display: inline;
+    font-size: 14px;
+}
+
+.quant{
+    font-weight: 700;
+    margin-left: 120px;
+}
+
+.checkout-button{
+    display: relative;
+    display: block;
+    float: right;
+    margin-top: 30px;
+    margin-right: 10px;
+    background-color:rgb(241, 225, 228);
+    color: black;
+    
+}
 /*single page products styles*/
 .productDetails {
+    overflow: hidden;
     position: relative;
     display: block;
     margin-left:50px;
-    width: 100%;
+    width: 90%;
     height: auto;
     margin-bottom: 30px;
     text-decoration: none;
     color: black;
+    
 }
 .productDetails h1{
-    font-size: 30px;
+    text-decoration: overline;
+    font-size: 28px;
     font-weight: 600;
     margin-bottom: 30px;
 }
@@ -300,15 +402,24 @@
     font-size: 18px;
     font-weight: 200;
     margin-left:350px;
-    margin-bottom: 5px;
 }
 .productImage{
     border: 1px solid gray;
     margin-left:350px;
-    width: 450px;
+    width: 400px;
     height: auto;
     object-fit: cover;
 
+}
+
+.card-button{
+    overflow: hidden;
+    display: block;
+    margin-left: 50%;
+    margin-bottom: 80px;
+    background-color: #f1f1f1;
+    color: black;
+    
 }
 /* register page */
 
@@ -369,7 +480,7 @@
   
 .footer {
     width: 100%;
-    margin: auto;
+    margin: 0;
     background-color: rgb(241, 225, 228);
     border: 1px solid black;
     padding-top: 30px;

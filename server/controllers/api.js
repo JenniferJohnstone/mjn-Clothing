@@ -284,8 +284,10 @@ apiRouter.post('/api/cart', (req,res) => {
             }
             console.log('quantity updated', item)
             shoppingCart[index] = item
-    }} else {
-        shoppingCart = []
+    } else {
+        if(!shoppingCart[0]){
+            shoppingCart = []
+        }
         const item = {  
             itemId: cartItem.itemId[0],      
             title: cartItem.title[0],
@@ -293,15 +295,17 @@ apiRouter.post('/api/cart', (req,res) => {
             price: cartItem.sellingStatus[0].convertedCurrentPrice[0].__value__, 
             picture: cartItem.galleryURL[0]
         }
+        console.log('push', item)
         shoppingCart.push(item)
     }
     console.log('item pushed to cart',shoppingCart)
     res.send({message: 'item has been added', contents: shoppingCart})
+}
 })
 
 apiRouter.post('/api/logout', (req, res) => {
     console.log('logging out', req.body.user.name)
-    console.log('request', req.body.response)
+    console.log('request', req.body)
     if (req.body.response){
         console.log('the cart is not empty?', req.body.cart)
         User.findByIdAndUpdate(req.body.user.name, {cart: req.body.response}, function(err, result) {

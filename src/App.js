@@ -31,20 +31,18 @@ function App() {
     <>
 
     <Router>
-       <div className="row">
-       <ul className="link">
-         <div className="five columns">
-        <Link className="nav-top" to="/home">Home </Link> 
-          <h3> <b>MJN Clothing</b></h3>  </div>
-
-          <div className="seven columns">
-         <Search className="home-search" />
-         </div>
-
 
          <Switch>
         <div className="login">
         <Route path ='/'>
+        <div className="row">
+        <div className="five columns">
+        <Link className="nav-top" to="/home">Home </Link> </div>
+          <h3> <b>MJN Clothing</b></h3>  
+          <div className="seven columns">
+          <Search className="home-search" /> </div>
+          </div>
+
         {user.name 
             ?<><em>{user.name} is logged in</em> <button onClick = {() => {
               logOut({user, response, setUser, setResponse})
@@ -58,8 +56,6 @@ function App() {
         } </Route> </div>
       </Switch>
       
-        </ul>
-      </div>
 
        
      
@@ -121,12 +117,11 @@ function App() {
           <div> <img className="photo-logo2" src={pants}></img></div> 
           <StoreView category = {'pants'}/>
         </Route>
-       
       </Switch>
      
       
 
-        <Switch>
+           <Switch>
               <Route path= '/store/:category/:id'>
               <ItemView user = {user.name} setResponse = {setResponse} />
               </Route>

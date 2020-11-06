@@ -51,11 +51,14 @@ const ItemView = ({user, setResponse}) => {
        } else {
            return (
             <>
+            <div className="row">
+            <div className="eleven columns"></div>
             <RenderItem item = {item} />
-            <button onClick={(event) => {
+            <button className="card-button" onClick={(event) => {
                 event.preventDefault()
                 addToCart(item[0], user, setResponse)
             } }>Add to Cart</button>
+            </div>
             
 
             </>
