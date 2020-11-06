@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const login = (id, password, setUser, setMessage, setResponse) => {
-    const baseUrl = 'http://localhost:3001/api/login/'
+    const baseUrl = '/api/login/'
 
     console.log('logging in',id,password)
     axios.post(baseUrl , {id, password})

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const addToCart = (item, user, setResponse) => {
 
-    const baseUrl = 'http://localhost:3001/api/cart/'
+    const baseUrl = '/api/cart/'
 
     console.log('posting this',{item, user})
     axios.post(baseUrl, {item, user})

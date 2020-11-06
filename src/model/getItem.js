@@ -4,7 +4,7 @@ import axios from 'axios'
 //retrieves items from ebay under the category Women's Clothing
 const getItem = (setItem, category, id) => {
 
-    var url = 'http://localhost:3001/api/shop' 
+    var url = '/api/shop' 
     console.log('here is', setItem, category, id)
 
     //I wrote this filter to get rid of items that had blank thumbnails for their picture, didn't look very good

@@ -285,7 +285,7 @@ apiRouter.post('/api/cart', (req,res) => {
             console.log('quantity updated', item)
             shoppingCart[index] = item
     } else {
-        if(!shoppingCart[0]){
+        if(shoppingCart == null){
             shoppingCart = []
         }
         const item = {  
