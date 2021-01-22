@@ -1,3 +1,6 @@
+##Please note 
+This was collaborative project created over the period of a few weeks between 2 other students. 
+
 ## Main purpose of project:
 
 The main purpose of our project is to provide an e-commerce platform for those who are interested in online shopping. Our web application is called MJN Clothing, which is made from our team member’s initials. In addition, creating an e-commerce platform would be challenging and enjoyable for us, so we tried to provide a variety of products for our potential customers with the modern design of website. 
