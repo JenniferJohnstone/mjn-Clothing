@@ -35,19 +35,16 @@ function App() {
          <Switch>
         <div className="login">
         <Route path ='/'>
-        <div className="row">
         <div className="five columns">
         <Link className="nav-top" to="/home">Home </Link> </div>
           <h3> <b>MJN Clothing</b></h3>  
-          <div className="seven columns">
-          <Search className="home-search" /> </div>
-          </div>
+          <Search className="home-search" /> 
 
         {user.name 
-            ?<><em>{user.name} is logged in</em> <button onClick = {() => {
+            ?<><div class="log-user"><em>{user.name} is logged in</em> <button onClick = {() => {
               logOut({user, response, setUser, setResponse})
             }
-            }>logout</button> 
+            }>logout</button> </div>
              <ShoppingCart contents = {response}/></>
             :<> 
             <LoginForm setUser = {setUser} setResponse = {setResponse}/> 
@@ -123,6 +120,7 @@ function App() {
 
            <Switch>
               <Route path= '/store/:category/:id'>
+              <ItemMenu />
               <ItemView user = {user.name} setResponse = {setResponse} />
               </Route>
           </Switch>

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import getItems from "../model/getItems";
+import {Link} from 'react-router-dom'
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -17,8 +18,9 @@ const Search = () => {
     //this is our search function, returns true or false depending on if the title of the item contains search term
     const filter = (array) => {
       const term = searchTerm.toUpperCase()
-      console.log('searching for',term, array.toUpperCase().includes(term))
-      return array.toUpperCase().includes(term) 
+      console.log('filter',array)
+      console.log('searching for',term, array.title.toUpperCase().includes(term))
+      return array.title.toUpperCase().includes(term) 
     }
     //this is a function that reduces each item in the items array to it's title and then removes duplicate titles
     //I included this function because the searches were returning items that were different but had the same title 
@@ -26,10 +28,10 @@ const Search = () => {
       var titles = []
       array.forEach((item) => {
         if(!titles.includes(item.title[0])) {
-          titles.push(item.title[0])
+          titles.push({title: item.title[0], id: item.itemId[0]})
         }
       })
-      titles = titles.slice(0, 5)
+      titles = titles.slice(0, 7)
       console.log('heres the results',titles)
       return titles
     }
@@ -44,7 +46,8 @@ const Search = () => {
 
           {searchResults.filter(filter).map(result => {
             return(
-              <li>{result}</li>
+              // <li>{result}</li>
+              <li><Link to ={`/store/${document.getElementById("category").value}/${result.id}`} >{result.title}</Link></li>
             )
           })}
           </ul>

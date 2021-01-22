@@ -8,19 +8,20 @@ const ShoppingCart = (response) => {
         console.log('this is items', items)
         return(
             <>
-             <div className="shopCard-head">
-            <h3>Shopping Cart</h3></div>
-            <div className="shopCard">
+            <div className="shopCard-head" onClick={() => {document.getElementById("shopCard").style.display = "block";}}>
+            <h3>{items.length} items in cart</h3>
+            </div>
+            <div className="shopCard" id="shopCard">
+            <button onClick={()=> {document.getElementById("shopCard").style.display = "none";}} className="close">Close</button>
 
             {items.map(item => {
         
                 return(
-                    <>
-                    <img src = {item.picture} />
+                    <div className="items">
+                    <img src = {item.picture}/>
                     <p>{item.title}</p>
                     <p className="quant">Quantity: {item.quantity}</p>
-                    
-                    </>
+                    </div>
                    
                 )
                 })}

@@ -42,7 +42,6 @@ const ItemView = ({user, setResponse}) => {
             <div className="row">
             <div className="eleven columns">
                 
-            <p>Here is the item view</p>
             <RenderItem item = {item} />
             <p>Please login to start buying.</p>
             </div>
